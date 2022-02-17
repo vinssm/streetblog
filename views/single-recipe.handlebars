@@ -1,0 +1,61 @@
+<div  class="infobox">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-2 center infobox">
+                <h2>{{recipe.title}}</h2>
+            </div>
+        </div>
+
+        <div class="row single infobox">
+            <div class="col-md-6">
+                <div class="desc">
+                    <h3>Ingredients</h3>
+                    <p>{{recipe.ingredients}}</p>
+                </div>
+                <div class="desc">
+                    <h3>How to Make</h3>
+                    <ul>
+                        <li>{{recipe.description}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img  src="{{recipe.image_url}}" alt="{{recipe.title}}">
+            </div>
+            <div class="col-md-12 center">
+                <h4>Posted by {{recipe.user.username}} on {{format_date recipe.created_at}}</h4>
+            </div>
+        </div>
+
+        {{#if recipe.comments.length}}
+            {{> comments recipe.comments}}
+        {{/if}}
+
+        {{#if loggedIn}}
+        <div class="row">     
+            <div class="col-md-10">
+                <h3>Add a comment</h3>
+                
+                <form class="comment-form">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <textarea name="comment" id="comment" cols="10" rows="4" class="form-control"
+                                placeholder="Add your comment here"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-40 text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        {{/if}}
+
+    </div>
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

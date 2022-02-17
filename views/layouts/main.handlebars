@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Street Blog</title>
+  {{!-- <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"> --}}
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body class="flex-column min-100-vh">
+  <div class="container">
+  <nav class="navbar">
+    <ul class="navright">
+      <li class="li-inline nav-item"><a href="/">Home</a></li>
+      <li class="li-inline nav-item"><a href="/new-post">Create Recipe</a></li>
+      {{#unless loggedIn}}
+      <li class="li-inline nav-item"><a href="/login">Login</a></li>
+      {{/unless}}
+      <li class="li-inline nav-item"><a href="/signup">Sign Up</a></li>
+      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+    </ul>
+  </nav>
+
+  <header class="main1">
+    <a class="navbar-item" href="/"> <img class="main-logo" src="../assets/images/Recipe.JPG" alt="Logo"/></a>
+  </header>
+
+  <main class="col-auto">
+    {{{body}}}
+  </main>
+
+  <footer class="flex-row center">
+    &copy; Street Blog Recipes!
+  </footer>
+  </div>
+</body>
+
+</html>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
+{{/if}}

@@ -1,0 +1,73 @@
+<div id="hero">
+    <div class="hero-banner jumbotron jumbotron-fluid">
+        
+        <div class="container">
+            <div class="col-md-12 text-center">
+                <div class="desc">
+                    <p>Year 2022!!! Kudos to online blogs, forms, websites and youtube. In day to day life online presence has become more important 
+                        as people don't have time to send more time in learning, so these online blogs, websites are quick to Google and try what 
+                        they want in matter of minutes.
+                    </p>
+                    <div class="line"></div>
+                        <h2>Street Blog</h2>
+                        <div class="row">
+                            <div class="column">
+                                <img src="../assets/images/Fish.JPG" alt="Fish" style="width:100%">
+                            </div>
+                            <div class="column">
+                                <img src="../assets/images/Pizza.JPG" alt="Pizza" style="width:100%">
+                            </div>
+                            <div class="column">
+                                <img src="../assets/images/Snak.JPG" alt="Snak" style="width:100%">
+                                </div>
+                            </div>
+                      </div>
+                 </div>
+            </div>
+        </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="column col-md-2 col-sm-3">
+                <a href="/recipes/category/Appetizers">
+                    <div class="appetizers">                        
+                        <h3>Appetizers</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="column col-md-2 col-sm-3 ">
+                <a href="/recipes/category/Breakfast">   
+                    <div class="breakfast">                  
+                        <h3>Breakfast</h3>
+                    </div>  
+                </a>
+            </div>
+            
+            <div class="column col-md-2 col-sm-3">
+                <a href="/recipes/category/Dessert">
+                    <div class="dessert">                     
+                        <h3>Dessert</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 center infobox">
+                <h2>Featured Recipes</h2>
+            </div>
+        </div>
+        <div class="row">
+        {{#each recipes as |recipe|}}
+        {{> recipe-info recipe }}
+        {{/each}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Street Blog</title>    
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div id="page">
+        <nav class="nav" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-6">
+                        <div><a href="/">Street Blog</a></div>
+                    </div>
+                    <div class="col-md-8 col-xs-6 text-right menu-1">
+                        <ul>
+                            <li class="has-dropdown">
+                                <a href="/recipe">Recipes</a>
+                                <ul class="dropdown">
+                                    <li><a href="/recipe/category/Appetizers">Appetizers</a></li>
+                                    <li><a href="/recipe/category/Breakfast">Breakfast</a></li>                                    
+                                    <li><a href="/recipe/category/Dessert">Dessert</a></li>
+                                </ul>
+                            </li>
+                            {{#if loggedIn}}
+                            <li><a href="/dashboard">My Recipes</a></li>
+                            <li><a id="logout">Logout</a></li>
+                            {{else}}
+                            <li><a href="/login">Login</a></li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+          {{{body}}}
+        </main>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+</html>

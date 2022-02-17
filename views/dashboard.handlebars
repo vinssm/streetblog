@@ -1,0 +1,17 @@
+<div id="info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 center dashboard-title">
+                <h2>My Recipes</h2>
+                <p class="mt-40">
+                    <a href="/dashboard/new" class="btn btn-primary btn-outline btn-lg">Add a Recipe</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            {{#each recipes as |recipe|}}
+            {{> recipe-info recipe }}
+            {{/each}}
+        </div>
+    </div>
+</div>

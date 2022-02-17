@@ -1,0 +1,36 @@
+<div id="infobars">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 center infoBox">
+                <h2>Recipes</h2>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div>               
+                <ul class="nav">
+                    <li><a href="/recipes">View All</a></li>
+                    <li><a href="/recipes/category/Appetizers">Appetizers</a></li>
+                    <li><a href="/recipes/category/Breakfast">Breakfast</a></li>                    
+                    <li><a href="/recipes/category/Dessert">Desssert</a></li>
+                </ul>
+
+                
+                <div class="row">
+                    
+                    <div class="content">
+                        <div class="row">
+                            {{#each recipes as |recipe|}}
+                            {{> recipe-info recipe }}
+                            {{/each}}
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
